@@ -9,11 +9,9 @@ of the appliances that consume it.
 The project described in this document aims to **control and optimize the overall
 consumption of a computer park.**
 
-Computers are not always properly switched off, and the same goes for
-are not always switched off properly, nor are monitors
-on standby.
+* Computers are not always properly switched off.
+* The same goes for are not always switched off properly
+*  Nor are monitors on standby.
 
 We propose to set up a system to adjust the consumption of a computer park as closely as possible consumption.
 
-To carry out our study, we'll apply it to a portion of the facility's IT equipment.
-of the school's IT equipment.
