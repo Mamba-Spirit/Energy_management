@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Axel
-Date                   :=10/05/24
+Date                   :=21/05/24
 CodeLitePath           :=/home/axel/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/MyApp.cpp$(ObjectSuffix) $(IntermediateDirectory)/EvtFramePrincipal.cpp$(ObjectSuffix) $(IntermediateDirectory)/FramePrincipal.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/DataRetrieval.cpp$(ObjectSuffix) $(IntermediateDirectory)/MyApp.cpp$(ObjectSuffix) $(IntermediateDirectory)/EvtFramePrincipal.cpp$(ObjectSuffix) $(IntermediateDirectory)/FramePrincipal.cpp$(ObjectSuffix) 
 
 
 
@@ -91,6 +91,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/DataRetrieval.cpp$(ObjectSuffix): DataRetrieval.cpp $(IntermediateDirectory)/DataRetrieval.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/axel/Documents/nba/do_not_open/personal/projects/project_2024/energy_management_app_supervision/supervision_software/DataRetrieval.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/DataRetrieval.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/DataRetrieval.cpp$(DependSuffix): DataRetrieval.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/DataRetrieval.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/DataRetrieval.cpp$(DependSuffix) -MM DataRetrieval.cpp
+
+$(IntermediateDirectory)/DataRetrieval.cpp$(PreprocessSuffix): DataRetrieval.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/DataRetrieval.cpp$(PreprocessSuffix) DataRetrieval.cpp
+
 $(IntermediateDirectory)/MyApp.cpp$(ObjectSuffix): MyApp.cpp $(IntermediateDirectory)/MyApp.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/axel/Documents/nba/do_not_open/personal/projects/project_2024/energy_management_app_supervision/supervision_software/MyApp.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/MyApp.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/MyApp.cpp$(DependSuffix): MyApp.cpp

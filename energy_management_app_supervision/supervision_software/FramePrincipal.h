@@ -82,7 +82,7 @@ class FramePrincipal : public wxFrame
 		wxButton* m_button_24h_SB002;
 		wxToggleButton* m_button_pc_SB002;
 		wxToggleButton* m_button_ecrans_SB002;
-		wxStaticBitmap* m_bitmap33;
+		wxStaticBitmap* m_bitmap7;
 		wxPanel* m_panel_salle_2;
 		wxStaticText* m_staticText47151;
 		wxTextCtrl* m_textCtrl_SC001_intensy;
@@ -208,7 +208,7 @@ class FramePrincipal : public wxFrame
 		wxButton* m_button_24h_SH002;
 		wxToggleButton* m_button_pc_SH002;
 		wxToggleButton* m_button_ecrans_SH002;
-		wxStaticBitmap* m_bitmap333;
+		wxStaticBitmap* m_bitmap6;
 
 	public:
 

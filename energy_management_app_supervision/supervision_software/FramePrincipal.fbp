@@ -66,7 +66,7 @@
                     <property name="border">5</property>
                     <property name="flag">wxEXPAND | wxALL</property>
                     <property name="proportion">1</property>
-                    <object class="wxNotebook" expanded="0">
+                    <object class="wxNotebook" expanded="1">
                         <property name="BottomDockable">1</property>
                         <property name="LeftDockable">1</property>
                         <property name="RightDockable">1</property>
@@ -3160,11 +3160,11 @@
                                             <property name="name">bSizer325</property>
                                             <property name="orient">wxHORIZONTAL</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">5</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxStaticBitmap" expanded="0">
+                                                <object class="wxStaticBitmap" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -3175,7 +3175,7 @@
                                                     <property name="aui_row"></property>
                                                     <property name="best_size"></property>
                                                     <property name="bg"></property>
-                                                    <property name="bitmap">Load From File; ../../ressources/img/carte.jpg</property>
+                                                    <property name="bitmap">Load From File; Design.png</property>
                                                     <property name="caption"></property>
                                                     <property name="caption_visible">1</property>
                                                     <property name="center_pane">0</property>
@@ -3200,7 +3200,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">m_bitmap33</property>
+                                                    <property name="name">m_bitmap7</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>
@@ -6279,7 +6279,7 @@
                                                     <property name="aui_row"></property>
                                                     <property name="best_size"></property>
                                                     <property name="bg"></property>
-                                                    <property name="bitmap">Load From File; ../../ressources/img/carte.jpg</property>
+                                                    <property name="bitmap">Load From Resource; carte.jpg</property>
                                                     <property name="caption"></property>
                                                     <property name="caption_visible">1</property>
                                                     <property name="center_pane">0</property>
@@ -6330,7 +6330,7 @@
                         <object class="notebookpage" expanded="0">
                             <property name="bitmap"></property>
                             <property name="label">Salle 3</property>
-                            <property name="select">1</property>
+                            <property name="select">0</property>
                             <object class="wxPanel" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -9383,7 +9383,7 @@
                                                     <property name="aui_row"></property>
                                                     <property name="best_size"></property>
                                                     <property name="bg"></property>
-                                                    <property name="bitmap">Load From File; ../../ressources/img/carte.jpg</property>
+                                                    <property name="bitmap">Load From File; carte.jpg</property>
                                                     <property name="caption"></property>
                                                     <property name="caption_visible">1</property>
                                                     <property name="center_pane">0</property>
@@ -9431,11 +9431,11 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="notebookpage" expanded="0">
-                            <property name="bitmap"></property>
+                        <object class="notebookpage" expanded="1">
+                            <property name="bitmap">Load From File; </property>
                             <property name="label">Salle 4</property>
-                            <property name="select">0</property>
-                            <object class="wxPanel" expanded="0">
+                            <property name="select">1</property>
+                            <object class="wxPanel" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
@@ -9486,7 +9486,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style">wxTAB_TRAVERSAL</property>
-                                <object class="wxBoxSizer" expanded="0">
+                                <object class="wxBoxSizer" expanded="1">
                                     <property name="minimum_size"></property>
                                     <property name="name">bSizerPrincipal3</property>
                                     <property name="orient">wxHORIZONTAL</property>
@@ -12463,20 +12463,20 @@
                                             </object>
                                         </object>
                                     </object>
-                                    <object class="sizeritem" expanded="0">
+                                    <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
                                         <property name="flag">wxALL|wxEXPAND</property>
                                         <property name="proportion">1</property>
-                                        <object class="wxBoxSizer" expanded="0">
+                                        <object class="wxBoxSizer" expanded="1">
                                             <property name="minimum_size"></property>
                                             <property name="name">bSizer3253</property>
                                             <property name="orient">wxHORIZONTAL</property>
                                             <property name="permission">none</property>
-                                            <object class="sizeritem" expanded="0">
+                                            <object class="sizeritem" expanded="1">
                                                 <property name="border">5</property>
                                                 <property name="flag">wxALL</property>
                                                 <property name="proportion">0</property>
-                                                <object class="wxStaticBitmap" expanded="0">
+                                                <object class="wxStaticBitmap" expanded="1">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
                                                     <property name="RightDockable">1</property>
@@ -12487,7 +12487,7 @@
                                                     <property name="aui_row"></property>
                                                     <property name="best_size"></property>
                                                     <property name="bg"></property>
-                                                    <property name="bitmap">Load From File; ../../ressources/img/carte.jpg</property>
+                                                    <property name="bitmap">Load From Resource; carte.jpg</property>
                                                     <property name="caption"></property>
                                                     <property name="caption_visible">1</property>
                                                     <property name="center_pane">0</property>
@@ -12512,7 +12512,7 @@
                                                     <property name="minimize_button">0</property>
                                                     <property name="minimum_size"></property>
                                                     <property name="moveable">1</property>
-                                                    <property name="name">m_bitmap333</property>
+                                                    <property name="name">m_bitmap6</property>
                                                     <property name="pane_border">1</property>
                                                     <property name="pane_position"></property>
                                                     <property name="pane_size"></property>

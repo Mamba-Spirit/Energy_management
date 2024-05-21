@@ -316,8 +316,8 @@ FramePrincipal::FramePrincipal( wxWindow* parent, wxWindowID id, const wxString&
 	wxBoxSizer* bSizer325;
 	bSizer325 = new wxBoxSizer( wxHORIZONTAL );
 
-	m_bitmap33 = new wxStaticBitmap( m_panel_salle_1, wxID_ANY, wxBitmap( wxT("../../ressources/img/carte.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer325->Add( m_bitmap33, 0, wxALL, 5 );
+	m_bitmap7 = new wxStaticBitmap( m_panel_salle_1, wxID_ANY, wxBitmap( wxT("Design.png"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer325->Add( m_bitmap7, 0, wxALL, 5 );
 
 
 	bSizerPrincipal->Add( bSizer325, 1, wxALL|wxEXPAND, 5 );
@@ -326,7 +326,7 @@ FramePrincipal::FramePrincipal( wxWindow* parent, wxWindowID id, const wxString&
 	m_panel_salle_1->SetSizer( bSizerPrincipal );
 	m_panel_salle_1->Layout();
 	bSizerPrincipal->Fit( m_panel_salle_1 );
-	m_notebook1->AddPage( m_panel_salle_1, wxT("Salle1"), true );
+	m_notebook1->AddPage( m_panel_salle_1, wxT("Salle1"), false );
 	m_panel_salle_2 = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* bSizerPrincipal1;
 	bSizerPrincipal1 = new wxBoxSizer( wxHORIZONTAL );
@@ -626,7 +626,7 @@ FramePrincipal::FramePrincipal( wxWindow* parent, wxWindowID id, const wxString&
 	wxBoxSizer* bSizer3251;
 	bSizer3251 = new wxBoxSizer( wxHORIZONTAL );
 
-	m_bitmap331 = new wxStaticBitmap( m_panel_salle_2, wxID_ANY, wxBitmap( wxT("../../ressources/img/carte.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bitmap331 = new wxStaticBitmap( m_panel_salle_2, wxID_ANY, wxBitmap( wxT("carte.jpg"), wxBITMAP_TYPE_RESOURCE ), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer3251->Add( m_bitmap331, 0, wxALL, 5 );
 
 
@@ -936,7 +936,7 @@ FramePrincipal::FramePrincipal( wxWindow* parent, wxWindowID id, const wxString&
 	wxBoxSizer* bSizer3252;
 	bSizer3252 = new wxBoxSizer( wxHORIZONTAL );
 
-	m_bitmap332 = new wxStaticBitmap( m_panel_salle_3, wxID_ANY, wxBitmap( wxT("../../ressources/img/carte.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bitmap332 = new wxStaticBitmap( m_panel_salle_3, wxID_ANY, wxBitmap( wxT("carte.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer3252->Add( m_bitmap332, 0, wxALL, 5 );
 
 
@@ -1246,8 +1246,8 @@ FramePrincipal::FramePrincipal( wxWindow* parent, wxWindowID id, const wxString&
 	wxBoxSizer* bSizer3253;
 	bSizer3253 = new wxBoxSizer( wxHORIZONTAL );
 
-	m_bitmap333 = new wxStaticBitmap( m_panel_salle_4, wxID_ANY, wxBitmap( wxT("../../ressources/img/carte.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer3253->Add( m_bitmap333, 0, wxALL, 5 );
+	m_bitmap6 = new wxStaticBitmap( m_panel_salle_4, wxID_ANY, wxBitmap( wxT("carte.jpg"), wxBITMAP_TYPE_RESOURCE ), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer3253->Add( m_bitmap6, 0, wxALL, 5 );
 
 
 	bSizerPrincipal3->Add( bSizer3253, 1, wxALL|wxEXPAND, 5 );
@@ -1256,7 +1256,7 @@ FramePrincipal::FramePrincipal( wxWindow* parent, wxWindowID id, const wxString&
 	m_panel_salle_4->SetSizer( bSizerPrincipal3 );
 	m_panel_salle_4->Layout();
 	bSizerPrincipal3->Fit( m_panel_salle_4 );
-	m_notebook1->AddPage( m_panel_salle_4, wxT("Salle 4"), false );
+	m_notebook1->AddPage( m_panel_salle_4, wxT("Salle 4"), true );
 
 	bSizer247->Add( m_notebook1, 1, wxEXPAND | wxALL, 5 );
 
