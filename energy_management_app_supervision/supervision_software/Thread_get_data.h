@@ -20,6 +20,7 @@ protected:
 private:
     wxEvtHandler* m_parent;
 	DATA_BASE& m_data_base;
+	bool m_stop_thread = false;
 	
 };
 

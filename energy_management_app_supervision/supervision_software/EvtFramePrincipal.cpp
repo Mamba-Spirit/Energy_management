@@ -477,14 +477,21 @@ void EvtFramePrincipal::OnCloseapp( wxCloseEvent& event ){
 	
 	//if(m_thread_action != nullptr)
 		//	delete m_thread_action;
-
-	if(m_thread_get_data){
-		cout<<"delete appelé!"<<endl;
+		
+	m_thread_get_data->stop_thread();
+	
+	if(!m_thread_get_data->IsAlive()){
+		
 		m_thread_get_data->Delete();
 		cout<<"delete appelé! et fini"<<endl;
-		
-
 	}
+	
+	
+	if(m_thread_get_data){
+		cout<<"delete appelé!"<<endl;
+		
+	}
+	
 					
 	//if(m_thread_monitor != nullptr)
 		//	delete m_thread_monitor;

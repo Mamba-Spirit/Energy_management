@@ -14,12 +14,13 @@ void *Thread_get_data::Entry() {
     //std::vector<MESURE> mesures = db->recuperer_mesures_historiques("nom_module");
 	if(!m_data_base.isConnected()){
 			m_data_base.connect();
-		}
-	while(!TestDestroy()){
+	}
+	
+	while((!TestDestroy()) && (m_stop_thread==false)){
 		
-		 if (TestDestroy()) {
+		 /*if (TestDestroy()) {
             break; // Sortir de la boucle si le thread doit être arrêté
-        }
+        }*/
 		m_data_base.recuperer_mesures_actuelles();
 		
 		wxCommandEvent event(THREAD_GET_DATA_COMPLETE);
@@ -32,7 +33,7 @@ void *Thread_get_data::Entry() {
 		wxMilliSleep(10000);
 	
 	}
-    
+    OnExit();
     return NULL;
 }
 
@@ -42,5 +43,6 @@ void Thread_get_data::OnExit(){
 }
 
 void Thread_get_data::stop_thread(){
-	Delete();
+	//Delete();
+	m_stop_thread = true;
 }
