@@ -1,0 +1,7 @@
+Debug/DATA_BASE.cpp.o: DATA_BASE.cpp DATA_BASE.h MACHINE.h MESURE.h
+
+DATA_BASE.h:
+
+MACHINE.h:
+
+MESURE.h:

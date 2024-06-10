@@ -1,4 +1,4 @@
-Debug/FramePrincipal.cpp.o: FramePrincipal.cpp FramePrincipal.h \
+Release/FramePrincipal.cpp.o: FramePrincipal.cpp FramePrincipal.h \
  /usr/include/wx-3.0/wx/artprov.h /usr/include/wx-3.0/wx/string.h \
  /usr/include/wx-3.0/wx/defs.h /usr/include/wx-3.0/wx/platform.h \
  /usr/include/wx-3.0/wx/compiler.h \
@@ -69,28 +69,23 @@ Debug/FramePrincipal.cpp.o: FramePrincipal.cpp FramePrincipal.h \
  /usr/include/wx-3.0/wx/textctrl.h /usr/include/wx-3.0/wx/textentry.h \
  /usr/include/wx-3.0/wx/gtk/textentry.h /usr/include/wx-3.0/wx/ioswrap.h \
  /usr/include/wx-3.0/wx/gtk/textctrl.h /usr/include/wx-3.0/wx/sizer.h \
- /usr/include/wx-3.0/wx/button.h /usr/include/wx-3.0/wx/anybutton.h \
+ /usr/include/wx-3.0/wx/tglbtn.h /usr/include/wx-3.0/wx/anybutton.h \
  /usr/include/wx-3.0/wx/gtk/anybutton.h \
- /usr/include/wx-3.0/wx/gtk/button.h /usr/include/wx-3.0/wx/tglbtn.h \
- /usr/include/wx-3.0/wx/gtk/tglbtn.h /usr/include/wx-3.0/wx/statbox.h \
+ /usr/include/wx-3.0/wx/gtk/tglbtn.h /usr/include/wx-3.0/wx/button.h \
+ /usr/include/wx-3.0/wx/gtk/button.h /usr/include/wx-3.0/wx/statbox.h \
  /usr/include/wx-3.0/wx/containr.h /usr/include/wx-3.0/wx/gtk/statbox.h \
- /usr/include/wx-3.0/wx/datectrl.h /usr/include/wx-3.0/wx/datetimectrl.h \
- /usr/include/wx-3.0/wx/generic/datectrl.h \
- /usr/include/wx-3.0/wx/compositewin.h /usr/include/wx-3.0/wx/dateevt.h \
- /usr/include/wx-3.0/wx/timectrl.h \
- /usr/include/wx-3.0/wx/generic/timectrl.h \
  /usr/include/wx-3.0/wx/gbsizer.h /usr/include/wx-3.0/wx/statbmp.h \
  /usr/include/wx-3.0/wx/gtk/statbmp.h /usr/include/wx-3.0/wx/panel.h \
  /usr/include/wx-3.0/wx/generic/panelg.h \
  /usr/include/wx-3.0/wx/notebook.h /usr/include/wx-3.0/wx/bookctrl.h \
  /usr/include/wx-3.0/wx/withimages.h \
- /usr/include/wx-3.0/wx/gtk/notebook.h /usr/include/wx-3.0/wx/statusbr.h \
- /usr/include/wx-3.0/wx/generic/statusbr.h /usr/include/wx-3.0/wx/pen.h \
- /usr/include/wx-3.0/wx/gtk/pen.h /usr/include/wx-3.0/wx/frame.h \
+ /usr/include/wx-3.0/wx/gtk/notebook.h /usr/include/wx-3.0/wx/frame.h \
  /usr/include/wx-3.0/wx/toplevel.h /usr/include/wx-3.0/wx/nonownedwnd.h \
  /usr/include/wx-3.0/wx/gtk/nonownedwnd.h \
  /usr/include/wx-3.0/wx/weakref.h /usr/include/wx-3.0/wx/meta/int2type.h \
- /usr/include/wx-3.0/wx/gtk/toplevel.h /usr/include/wx-3.0/wx/gtk/frame.h
+ /usr/include/wx-3.0/wx/gtk/toplevel.h /usr/include/wx-3.0/wx/statusbr.h \
+ /usr/include/wx-3.0/wx/generic/statusbr.h /usr/include/wx-3.0/wx/pen.h \
+ /usr/include/wx-3.0/wx/gtk/pen.h /usr/include/wx-3.0/wx/gtk/frame.h
 
 FramePrincipal.h:
 
@@ -348,37 +343,23 @@ FramePrincipal.h:
 
 /usr/include/wx-3.0/wx/sizer.h:
 
-/usr/include/wx-3.0/wx/button.h:
+/usr/include/wx-3.0/wx/tglbtn.h:
 
 /usr/include/wx-3.0/wx/anybutton.h:
 
 /usr/include/wx-3.0/wx/gtk/anybutton.h:
 
-/usr/include/wx-3.0/wx/gtk/button.h:
-
-/usr/include/wx-3.0/wx/tglbtn.h:
-
 /usr/include/wx-3.0/wx/gtk/tglbtn.h:
+
+/usr/include/wx-3.0/wx/button.h:
+
+/usr/include/wx-3.0/wx/gtk/button.h:
 
 /usr/include/wx-3.0/wx/statbox.h:
 
 /usr/include/wx-3.0/wx/containr.h:
 
 /usr/include/wx-3.0/wx/gtk/statbox.h:
-
-/usr/include/wx-3.0/wx/datectrl.h:
-
-/usr/include/wx-3.0/wx/datetimectrl.h:
-
-/usr/include/wx-3.0/wx/generic/datectrl.h:
-
-/usr/include/wx-3.0/wx/compositewin.h:
-
-/usr/include/wx-3.0/wx/dateevt.h:
-
-/usr/include/wx-3.0/wx/timectrl.h:
-
-/usr/include/wx-3.0/wx/generic/timectrl.h:
 
 /usr/include/wx-3.0/wx/gbsizer.h:
 
@@ -398,14 +379,6 @@ FramePrincipal.h:
 
 /usr/include/wx-3.0/wx/gtk/notebook.h:
 
-/usr/include/wx-3.0/wx/statusbr.h:
-
-/usr/include/wx-3.0/wx/generic/statusbr.h:
-
-/usr/include/wx-3.0/wx/pen.h:
-
-/usr/include/wx-3.0/wx/gtk/pen.h:
-
 /usr/include/wx-3.0/wx/frame.h:
 
 /usr/include/wx-3.0/wx/toplevel.h:
@@ -419,5 +392,13 @@ FramePrincipal.h:
 /usr/include/wx-3.0/wx/meta/int2type.h:
 
 /usr/include/wx-3.0/wx/gtk/toplevel.h:
+
+/usr/include/wx-3.0/wx/statusbr.h:
+
+/usr/include/wx-3.0/wx/generic/statusbr.h:
+
+/usr/include/wx-3.0/wx/pen.h:
+
+/usr/include/wx-3.0/wx/gtk/pen.h:
 
 /usr/include/wx-3.0/wx/gtk/frame.h:

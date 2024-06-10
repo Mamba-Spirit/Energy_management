@@ -1,1 +1,1 @@
-./Debug/DataRetrieval.cpp.o ./Debug/MyApp.cpp.o ./Debug/EvtFramePrincipal.cpp.o ./Debug/FramePrincipal.cpp.o
+./Debug/EvtFramePrincipal.cpp.o ./Debug/MyApp.cpp.o ./Debug/CustomEvents.cpp.o ./Debug/Thread_plot.cpp.o ./Debug/FramePrincipal.cpp.o ./Debug/Thread_get_data.cpp.o ./Debug/Thread_monitor.cpp.o ./Debug/MESURE.cpp.o ./Debug/MACHINE.cpp.o ./Debug/Thread_action.cpp.o ./Debug/DATA_BASE.cpp.o

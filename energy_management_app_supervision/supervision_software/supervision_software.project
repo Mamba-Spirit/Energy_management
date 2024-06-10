@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="supervision_software" Version="10.0.0" InternalType="GUI">
+<CodeLite_Project Name="supervision_software" Version="11000" InternalType="GUI">
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
     </Plugin>
   </Plugins>
+  <VirtualDirectory Name="DATA_BASE">
+    <File Name="MACHINE.cpp"/>
+    <File Name="MACHINE.h"/>
+    <File Name="MESURE.cpp"/>
+    <File Name="MESURE.h"/>
+    <File Name="DATA_BASE.cpp"/>
+    <File Name="DATA_BASE.h"/>
+  </VirtualDirectory>
   <Description/>
   <Dependencies/>
+  <VirtualDirectory Name="resources">
+    <File Name="Design.png"/>
+    <File Name="../../ressources/img/carte.jpg"/>
+    <File Name="FramePrincipal.fbp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="include">
+    <File Name="Thread_monitor.h"/>
+    <File Name="CustomEvents.h"/>
+    <File Name="Thread_plot.h"/>
+    <File Name="Thread_get_data.h"/>
+    <File Name="Thread_action.h"/>
+    <File Name="FramePrincipal.h"/>
+    <File Name="EvtFramePrincipal.h"/>
+    <File Name="MyApp.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="src">
+    <File Name="CustomEvents.cpp"/>
+    <File Name="Thread_monitor.cpp"/>
+    <File Name="Thread_plot.cpp"/>
+    <File Name="Thread_action.cpp"/>
+    <File Name="Thread_get_data.cpp"/>
+    <File Name="MyApp.cpp"/>
+    <File Name="FramePrincipal.cpp"/>
+    <File Name="EvtFramePrincipal.cpp"/>
+  </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
       <Compiler Options="" C_Options="" Assembler="">
@@ -21,7 +54,11 @@
       <Compiler Options="-g;-O0;-Wall;$(shell wx-config --cxxflags --unicode=yes  )" C_Options="-g;-O0;-Wall;$(shell wx-config --cxxflags --unicode=yes  )" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="IHM"/>
       </Compiler>
-      <Linker Options="$(shell wx-config   --libs --unicode=yes)" Required="yes"/>
+      <Linker Options="$(shell wx-config   --libs --unicode=yes)" Required="yes">
+        <Library Value="PocoDataODBC"/>
+        <Library Value="PocoData"/>
+        <Library Value="PocoFoundation"/>
+      </Linker>
       <ResourceCompiler Options="$(shell wx-config --rcflags)" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
@@ -60,7 +97,11 @@
       <Compiler Options="-O2;-Wall;$(shell wx-config --cxxflags --unicode=yes --debug=no)" C_Options="-O2;-Wall;$(shell wx-config --cxxflags --unicode=yes --debug=no)" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <Preprocessor Value="NDEBUG"/>
       </Compiler>
-      <Linker Options="-s;$(shell wx-config --debug=no --libs --unicode=yes)" Required="yes"/>
+      <Linker Options="-s;$(shell wx-config --debug=no --libs --unicode=yes)" Required="yes">
+        <Library Value="PocoDataODBC"/>
+        <Library Value="PocoData"/>
+        <Library Value="PocoFoundation"/>
+      </Linker>
       <ResourceCompiler Options="$(shell wx-config --rcflags)" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Release" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
@@ -96,23 +137,4 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="resources">
-    <File Name="Design.png"/>
-    <File Name="../../ressources/img/carte.jpg"/>
-    <File Name="FramePrincipal.fbp"/>
-  </VirtualDirectory>
-  <VirtualDirectory Name="include">
-    <File Name="data_base.h"/>
-    <File Name="DataRetrieval.h"/>
-    <File Name="FramePrincipal.h"/>
-    <File Name="EvtFramePrincipal.h"/>
-    <File Name="MyApp.h"/>
-  </VirtualDirectory>
-  <VirtualDirectory Name="src">
-    <File Name="data_base.cpp"/>
-    <File Name="DataRetrieval.cpp"/>
-    <File Name="MyApp.cpp"/>
-    <File Name="FramePrincipal.cpp"/>
-    <File Name="EvtFramePrincipal.cpp"/>
-  </VirtualDirectory>
 </CodeLite_Project>

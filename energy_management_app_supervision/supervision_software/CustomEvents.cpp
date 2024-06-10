@@ -1,0 +1,6 @@
+#include "CustomEvents.h"
+
+wxDEFINE_EVENT(THREAD_UPDATE_COMPLETE, wxCommandEvent);
+wxDEFINE_EVENT(THREAD_GET_DATA_COMPLETE, wxCommandEvent);
+wxDEFINE_EVENT(THREAD_PLOT_COMPLETE, wxCommandEvent);
+wxDEFINE_EVENT(THREAD_MONITOR_UPDATE, wxCommandEvent);

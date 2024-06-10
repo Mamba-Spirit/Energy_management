@@ -1,0 +1,3 @@
+Debug/MACHINE.cpp.o: MACHINE.cpp MACHINE.h
+
+MACHINE.h:
