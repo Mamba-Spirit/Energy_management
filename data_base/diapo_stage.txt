@@ -1,0 +1,67 @@
+Pour votre présentation de stage, je vous propose de structurer votre présentation en plusieurs sections, en suivant le contenu de votre rapport de stage. Voici une suggestion de plan avec des points clés à aborder dans chaque section. Vous pouvez adapter ce plan en fonction des informations disponibles dans votre rapport et de ce que vous souhaitez mettre en avant.
+
+1. Introduction
+Présentation personnelle : Nom, formation, établissement (Campus Ozanam), tuteur de stage (Jonathan Meauzoone), et durée du stage (06 Juin au 14 Juillet 2023).
+Contexte du stage : Rôle de technicien support informatique au Centre de Services Informatiques (C.S.I) de l’Institut Catholique de Lille.
+2. Présentation de l'Institut Catholique de Lille
+Histoire et mission : Fondé en 1875, plus grande université privée à but non lucratif de France, pluridisciplinaire, valeurs humaines et chrétiennes.
+Chiffres clés :
+40,000 étudiants
+5 facultés
+20 grandes écoles et instituts
+345 filières de formation
+15 unités et instituts de recherche
+546 universités partenaires
+3. Le Centre de Services Informatiques (C.S.I)
+Rôle et missions : Maintenance et support technique, gestion des comptes utilisateurs, déploiement des postes de travail, gestion des réseaux.
+Équipe et collaboration : Travail au sein d’une équipe compétente et collaboration avec différents départements.
+4. Objectifs du Stage
+Apprentissage pratique : Application des connaissances théoriques.
+Acquisition de compétences techniques : Utilisation de GLPI, SNIPE-IT, AnyDesk, Office 365, et le Centre d'administration Exchange.
+Intégration professionnelle : Compréhension des exigences et normes du monde du travail.
+Collaboration et communication : Interaction avec les utilisateurs et les collègues.
+Réponse aux besoins de l'université : Maintenance des équipements, assistance technique.
+5. Missions et Responsabilités
+Installation des postes de travail : Déploiement de nouveaux équipements, configuration des systèmes.
+Maintenance et support technique : Résolution des problèmes logiciels, systèmes et matériels.
+Gestion des comptes utilisateurs : Création, modification, déblocage et désactivation des comptes.
+Gestion des actifs : Utilisation de GLPI et SNIPE-IT pour le suivi des équipements.
+Collaborations et interventions à distance : Utilisation d’AnyDesk pour les interventions à distance.
+Contribution aux projets en cours : Mise en place d'un système de dual boot Linux Ubuntu et Windows 10.
+6. Compétences Acquises
+Techniques : Déploiement et configuration des postes de travail, gestion des comptes utilisateurs, utilisation des outils de gestion.
+Transversales : Communication, collaboration, gestion de projets, adaptabilité et résolution de problèmes.
+7. Conclusion
+Bilan du stage : Expérience formatrice et enrichissante, acquisition de compétences techniques et transversales, contribution aux activités du C.S.I.
+Remerciements : À l’équipe du C.S.I, aux collègues de l’université, et aux professeurs pour leur soutien et encadrement.
+8. Questions-Réponses
+Préparez-vous à répondre à des questions sur vos missions spécifiques, les outils utilisés, les compétences acquises, et vos perspectives futures.
+Exemples de diapositives
+Diapositive 1 : Introduction
+Photo personnelle
+Nom, formation, établissement, tuteur de stage
+Dates du stage
+Diapositive 2 : Présentation de l'Institut
+Logo de l'institut
+Chiffres clés
+Diapositive 3 : Le C.S.I
+Organigramme
+Rôles et missions principales
+Diapositive 4 : Objectifs du Stage
+Liste des objectifs
+Diapositive 5 : Missions et Responsabilités
+Description des missions (une par mission principale)
+Diapositive 6 : Compétences Acquises
+Tableau ou liste des compétences techniques et transversales
+Diapositive 7 : Conclusion
+Bilan personnel
+Remerciements
+Vous pouvez maintenant préparer votre présentation PowerPoint en suivant ce plan. N'hésitez pas à ajouter des images, des graphiques, ou des captures d'écran des outils que vous avez utilisés pour illustrer vos propos et rendre votre présentation plus dynamique.
+
+
+
+
+
+
+
+

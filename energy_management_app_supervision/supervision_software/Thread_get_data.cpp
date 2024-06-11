@@ -10,17 +10,13 @@ Thread_get_data::~Thread_get_data() {
 }
 
 void *Thread_get_data::Entry() {
-    //DATA_BASE *db = new DATA_BASE;
-    //std::vector<MESURE> mesures = db->recuperer_mesures_historiques("nom_module");
+	
 	if(!m_data_base.isConnected()){
 			m_data_base.connect();
 	}
 	
 	while((!TestDestroy()) && (m_stop_thread==false)){
 		
-		 /*if (TestDestroy()) {
-            break; // Sortir de la boucle si le thread doit être arrêté
-        }*/
 		m_data_base.recuperer_mesures_actuelles();
 		
 		wxCommandEvent event(THREAD_GET_DATA_COMPLETE);

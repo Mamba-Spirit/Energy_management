@@ -1,25 +1,35 @@
-#include "DATA_BASE.h"
-#include "MESURE.h"
-#include "MACHINE.h"
-
+#include "data_base.h"
+#include "mesure.cpp"
+#include "machine.cpp"
+//g++ main.cpp -o test -l PocoDataODBC  -l PocoData -l PocoFoundation
 
 
 DATA_BASE::DATA_BASE(){
-	m_connected = false;
-}
 
-
-DATA_BASE::~DATA_BASE()
-{
-    // Nettoyage de la base de données
-    if (m_connected) {
-        disconnect();
+        //connexion à la base de données
+    string dsn = "PROJET_6_DATA_BASE";
+    m_session = NULL;
+    m_connexionOk = true;
+    ODBC::Connector::registerConnector();
+    try
+    {
+        m_session= new Session("ODBC", "DSN="+dsn);
+        cout <<"the connexion is 100" <<endl;
+    }
+    catch (ConnectionFailedException& ce)
+    {
+        m_last_error= ce.displayText();
+        m_connexionOk = false;
+        
     }
 }
 
+DATA_BASE::~DATA_BASE(){
+    delete m_session;
+}
 
-
-vector<MESURE> DATA_BASE::recuperer_mesures_historiques(const string& nom_module){
+vector<MESURE> DATA_BASE::recuperer_mesures_historiques(const string& nom_module)
+{
     vector<MESURE> mesures;
     string module_id;
 
@@ -52,6 +62,10 @@ vector<MESURE> DATA_BASE::recuperer_mesures_historiques(const string& nom_module
                 mesure.set_puissance(resultat->value("puissance").convert<double>());
                 mesure.set_date_mesure( extract_date_time(resultat->value("date_mesure").convert<std::string>()));
 
+                //long long timestamp_seconds = resultat->value("date_mesure").convert<long long>();
+                //std::chrono::seconds seconds(timestamp_seconds);
+                //mesure.set_date_mesure(std::chrono::system_clock::time_point(std::chrono::seconds(timestamp_seconds)));
+
                 mesures.push_back(mesure);
                 more = resultat->moveNext();
             }
@@ -66,12 +80,6 @@ vector<MESURE> DATA_BASE::recuperer_mesures_historiques(const string& nom_module
     }
     
     return mesures;
-}
-
-
-vector<MESURE> DATA_BASE::Get_mesures_actuelles(){
-	
-	return mesures_actuelles;
 }
 
 bool DATA_BASE::get_etat_secteur(const string& nom_secteur){
@@ -181,7 +189,8 @@ bool DATA_BASE::get_etat_module_demande(const string& nom_module){
     return etat_demande;
 }
 
-void DATA_BASE::set_etat_secteur(const string& nom_secteur, bool etat){
+void DATA_BASE::set_etat_secteur(const string& nom_secteur, bool etat)
+{
     try
     {
         Statement *select = new Statement(*m_session);
@@ -448,21 +457,30 @@ vector<MACHINE> DATA_BASE::get_machines(const std::string& nom_secteur){
    
 }
 
-void DATA_BASE::recuperer_mesures_actuelles(){
-	
-    mesures_actuelles.clear();
-	
+vector<MESURE> DATA_BASE::recuperer_mesures_actuelles()
+{
+    vector<MESURE> mesures;
+
     try
     {
         Statement *select;
         RecordSet *resultat;
         select = new Statement(*m_session);
        // *select << "SELECT tension, intensite, puissance, date_mesure FROM Mesures ORDER BY date_mesure DESC LIMIT 1";
-        *select << "SELECT m.tension, m.intensite, m.puissance, m.date_mesure, mod.nom_module "
+       // *select << "SELECT m.tension, m.intensite, m.puissance, m.date_mesure, mod.nom_module "
+        //           "FROM Mesures m "
+       //            "JOIN Modules mod ON m.module_id = mod.id "
+        //           "WHERE mod.etat_module = TRUE "
+        //           "AND m.date_mesure = (SELECT MAX(date_mesure) FROM Mesures WHERE module_id = m.module_id)";
+       *select << "SELECT m.tension, m.intensite, m.puissance, m.date_mesure, mod.nom_module "
          "FROM Mesures m "
          "JOIN Modules mod ON m.module_id = mod.id "
          "WHERE mod.etat_module = TRUE "
          "AND m.date_mesure BETWEEN NOW() - INTERVAL '2 minutes' AND NOW() - INTERVAL '1 minute'";
+
+
+
+
 
         resultat = new RecordSet(*select);
 
@@ -480,27 +498,32 @@ void DATA_BASE::recuperer_mesures_actuelles(){
                 mesure.set_puissance(resultat->value("puissance").convert<double>());
                 mesure.set_date_mesure(extract_date_time(resultat->value("date_mesure").convert<std::string>()));
 
-                mesures_actuelles.push_back(mesure);
+                mesures.push_back(mesure);
                 more = resultat->moveNext();
             }
+
         }
+
         delete resultat;
         // delete select;
-		if(mesures_actuelles.empty()){
-			set_last_error("Pas de mesures mesuré dans les 2 dernières minutes");
+        if(mesures.empty()){
+            set_last_error("Pas de mesures mesuré dans les 2 dernières minutes");
             save_to_log(get_last_error());
-		}
-		else{
-			sortMesuresByNomModule(mesures_actuelles);
-		}
-		//sortMesuresByNomModule(mesures_actuelles);
+        }
+        else{
+            sortMesuresByNomModule(mesures);
+        }
     }
     catch (ODBC::StatementException &se)
     {
         cerr << "Erreur ODBC: " << se.toString() << endl;
     }
+    
+    
 
+    return mesures;
 }
+
 
 string DATA_BASE::extract_date_time(const std::string& iso_date_time) {
 
@@ -583,67 +606,6 @@ vector<string> DATA_BASE::get_nom_modules(){
 
 }
 
-
-DATA_BASE& DATA_BASE::getInstance()
-{
-    static DATA_BASE instance;  // Cette instance est créée une seule fois
-    return instance;           // Retourne la référence à l'instance
-}
-
-
-void DATA_BASE::connect(){
-	
-    std::lock_guard<std::mutex> lock(m_mutex); // Protection contre l'accès concurrentiel
-	string dsn = MY_DSN;
-    
-    if (!m_connected) {
-        std::cout << "Connecting to database with connection string: " << dsn << std::endl;
-		
-			     //connexion à la base de données
-		
-		m_session = NULL;
-		ODBC::Connector::registerConnector();
-		try
-		{
-			m_session= new Session("ODBC", "DSN="+dsn);
-			m_connected = true;
-			std::cout << "Connected to database successfully." << std::endl;
-		}
-		catch (ConnectionFailedException& ce)
-		{
-			m_last_error= ce.displayText();
-		}
-
-    }
-	else {
-        std::cout << "Already connected to database." << std::endl;
-    }
-}
-
-
-void DATA_BASE::disconnect()
-{
-    std::lock_guard<std::mutex> lock(m_mutex); // Protection contre l'accès concurrentiel
-    
-    if (m_connected) {
-        // Exemple d'implémentation de la déconnexion
-        std::cout << "Disconnecting from database." << std::endl;
-
-		if (m_session) {
-			delete m_session;
-			m_session = nullptr; 
-			ODBC::Connector::unregisterConnector(); 
-			m_connected = false;
-			std::cout << "Disconnected from database successfully." << std::endl;
-		}
-    }
-}
-
-
-bool DATA_BASE::isConnected() const
-{
-    return m_connected;
-}
 
 
 void DATA_BASE::sortMesuresByNomModule(std::vector<MESURE>& mesures) {

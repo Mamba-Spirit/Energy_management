@@ -139,7 +139,14 @@ Debug/EvtFramePrincipal.cpp.o: EvtFramePrincipal.cpp EvtFramePrincipal.h \
  /usr/include/wx-3.0/wx/gtk/filedlg.h \
  /usr/include/wx-3.0/wx/gtk/filectrl.h /usr/include/wx-3.0/wx/filectrl.h \
  /usr/include/wx-3.0/wx/mdi.h /usr/include/wx-3.0/wx/gtk/mdi.h \
- Thread_action.h Thread_get_data.h Thread_monitor.h Thread_plot.h
+ Thread_action.h Thread_get_data.h Thread_monitor.h Thread_plot.h \
+ /usr/include/wx-3.0/wx/aui/aui.h \
+ /usr/include/wx-3.0/wx/aui/framemanager.h \
+ /usr/include/wx-3.0/wx/aui/dockart.h \
+ /usr/include/wx-3.0/wx/aui/floatpane.h /usr/include/wx-3.0/wx/minifram.h \
+ /usr/include/wx-3.0/wx/gtk/minifram.h \
+ /usr/include/wx-3.0/wx/aui/auibar.h /usr/include/wx-3.0/wx/aui/auibook.h \
+ /usr/include/wx-3.0/wx/aui/tabart.h /usr/include/wx-3.0/wx/aui/tabmdi.h
 
 EvtFramePrincipal.h:
 
@@ -654,3 +661,23 @@ Thread_get_data.h:
 Thread_monitor.h:
 
 Thread_plot.h:
+
+/usr/include/wx-3.0/wx/aui/aui.h:
+
+/usr/include/wx-3.0/wx/aui/framemanager.h:
+
+/usr/include/wx-3.0/wx/aui/dockart.h:
+
+/usr/include/wx-3.0/wx/aui/floatpane.h:
+
+/usr/include/wx-3.0/wx/minifram.h:
+
+/usr/include/wx-3.0/wx/gtk/minifram.h:
+
+/usr/include/wx-3.0/wx/aui/auibar.h:
+
+/usr/include/wx-3.0/wx/aui/auibook.h:
+
+/usr/include/wx-3.0/wx/aui/tabart.h:
+
+/usr/include/wx-3.0/wx/aui/tabmdi.h:

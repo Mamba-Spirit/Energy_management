@@ -4,18 +4,14 @@
 #include "Thread_plot.h"
 #include "Thread_monitor.h"*/
 #include "CustomEvents.h"
+#include <wx/aui/aui.h>
+#include <wx/wx.h>
 
 EvtFramePrincipal::EvtFramePrincipal( wxWindow* parent )
 :
 FramePrincipal( parent )
 
 {
-	/*if(!DataBase->isconnected()){
-		wxMessageBox("L'application de supervision n'est pas connécté à la base de donnée.");
-	}
-	else
-		m_statusBar->SetStatusText("connexion à la base de données Ok");
-	*/
 	
 	InitDatabase();
 	
@@ -188,10 +184,9 @@ void EvtFramePrincipal::Set_text_controle_value( const wxString& module_id, cons
 		
         if (textCtrl) {
             textCtrl->SetValue(wxString::Format(wxT("%.2f"), value_mesure));
-			//textCtrl->AppendText(wxString::Format(wxT("%.2f"), value_mesure));
         }
-		else
-			cout<<"Espace de text non trouvé"<<endl;
+		//else
+			//cout<<"Espace de text non trouvé"<<endl;
 }
 
 
@@ -420,41 +415,85 @@ void EvtFramePrincipal::OnGetDataCompleted(wxCommandEvent& event) {
 	
 		//m_textCtrl_SA002_puissance->AppendText("just a test!");
 	
-		Set_text_controle_value("SB001", "intensity", 12.5);
-		Set_text_controle_value("SB001", "tension", 12.5);
-		Set_text_controle_value("SB001", "puissance", 12.5);
+		//m_textCtrl_SA002_puissance->SetValue(wxString::Format(wxT("%.2f"), value_mesure));
+		
+		
     
     if (mesures_actuelles)
     {	
-		//m_textCtrl_SA001_intensy->AppendText(mesures_actuelles[0].get_intensite());
-		//wxMessageBox("Données récupérées avec succès !");
-        // Logique pour afficher les mesures sur l'interface utilisateur
-		
-		/*Set_text_controle_value("SA001", "intensity", 12.5);
-		Set_text_controle_value("SA001", "tension", 12.5);
-		Set_text_controle_value("SA001", "puissance", 12.5);*/
-
 		
         for (unsigned int i = 0; i < mesures_actuelles->size(); i++){
 			
-			/*Set_text_controle_value(extract_module_name(mesures_actuelles[i]->get_nom_module()),"intensity", mesures_actuelles[i]->get_intensite());
-			Set_text_controle_value(extract_module_name(mesures_actuelles[i]->get_nom_module()),"tension", mesures_actuelles[i]->get_tension());
-			Set_text_controle_value(extract_module_name(mesures_actuelles[i]->get_nom_module()),"puissance", mesures_actuelles[i]->get_puissance());
-			*/
-			string nom_module_extracted = extract_module_name(mesures_actuelles->at(i).get_nom_module());
+
+			if(mesures_actuelles->at(i).get_nom_module()== "Module SA001"){
+				m_textCtrl_SA001_intensy->Clear();
+				m_textCtrl_SA001_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SA001_puissance->Clear();
+				m_textCtrl_SA001_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				
+				m_textCtrl_SA001_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
 			
-			Set_text_controle_value(nom_module_extracted, "intensity", mesures_actuelles->at(i).get_intensite());
-            Set_text_controle_value(nom_module_extracted, "tension", mesures_actuelles->at(i).get_tension());
-            Set_text_controle_value(nom_module_extracted, "puissance", mesures_actuelles->at(i).get_puissance());
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SA002"){
+				m_textCtrl_SA002_intensy->Clear();
+				m_textCtrl_SA002_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SA002_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SA002_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+
+			}
 			
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SB001"){
+				m_textCtrl_SB001_intensy->Clear();
+				m_textCtrl_SB001_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SB001_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SB001_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
 			
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SB002"){
+				m_textCtrl_SB002_intensy->Clear();
+				m_textCtrl_SB002_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SB002_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SB002_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
 			
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SC001"){
+				m_textCtrl_SC001_intensy->Clear();
+				m_textCtrl_SC001_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SC001_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SC001_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
+			
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SC002"){
+				m_textCtrl_SC002_intensy->Clear();
+				m_textCtrl_SC002_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SC002_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SC002_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
+			
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SD001"){
+				m_textCtrl_SD001_intensy->Clear();
+				m_textCtrl_SD001_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SD001_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SD001_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
+			
+			else if(mesures_actuelles->at(i).get_nom_module()== "Module SD002"){
+				m_textCtrl_SD002_intensy->Clear();
+				m_textCtrl_SD002_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				m_textCtrl_SD002_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				m_textCtrl_SD002_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+			}
+
             //std::cout << "Measure: " << mesures_actuelles << std::endl; // Remplacez par la mise à jour de votre IHM
         }
         delete mesures_actuelles; // Libération de la mémoire
     }
 	
 }
+
+
+
+
 
 void EvtFramePrincipal::OnPlotCompleted(wxCommandEvent& event) {
 	
@@ -480,39 +519,21 @@ void EvtFramePrincipal::OnCloseapp( wxCloseEvent& event ){
 		
 	m_thread_get_data->stop_thread();
 	
-	if(!m_thread_get_data->IsAlive()){
+	if(m_thread_get_data->IsAlive()){
 		
 		m_thread_get_data->Delete();
 		cout<<"delete appelé! et fini"<<endl;
+		m_thread_get_data = nullptr;
 	}
 	
-	
-	if(m_thread_get_data){
-		cout<<"delete appelé!"<<endl;
-		
-	}
-	
-					
-	//if(m_thread_monitor != nullptr)
-		//	delete m_thread_monitor;
-			
-	//if(m_thread_plot != nullptr)
-		//	delete m_thread_plot;
-			
-	
+
 	
 	DATA_BASE& db = DATA_BASE::getInstance();
     if (db.isConnected()) {
         db.disconnect();
     }
 	
-    // Maintenant, appelez la méthode de fermeture par défaut
     event.Skip();
-	
-	/*delete m_thread_action;
-	delete m_thread_get_data;
-	delete m_thread_monitor;
-	delete m_thread_plot;*/
 	
 }
 
