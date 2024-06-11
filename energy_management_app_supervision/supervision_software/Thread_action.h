@@ -12,6 +12,7 @@ public:
 
     //Thread_action(wxEvtHandler* parent, const std::string& secteur);
     ~Thread_action();
+	void stop_thread();
 
 protected:
     virtual void *Entry();
@@ -21,6 +22,7 @@ private:
     wxEvtHandler* m_parent;
     std::string m_secteur;
 	DATA_BASE& m_data_base;
+	bool m_stop_thread = false;
 };
 
 #endif // THREAD_ACTION_H

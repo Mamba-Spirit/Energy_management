@@ -22,6 +22,7 @@ private:
 	DATA_BASE& m_data_base;
 	bool m_stop_thread = false;
 	
+	
 };
 
 #endif // THREAD_GET_DATA_H

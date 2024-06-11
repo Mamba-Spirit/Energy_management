@@ -412,11 +412,6 @@ void EvtFramePrincipal::OnGetDataCompleted(wxCommandEvent& event) {
     
 	
 	vector<MESURE>* mesures_actuelles = static_cast<std::vector<MESURE>*>(event.GetClientData());
-	
-		//m_textCtrl_SA002_puissance->AppendText("just a test!");
-	
-		//m_textCtrl_SA002_puissance->SetValue(wxString::Format(wxT("%.2f"), value_mesure));
-		
 		
     
     if (mesures_actuelles)
@@ -525,6 +520,36 @@ void EvtFramePrincipal::OnCloseapp( wxCloseEvent& event ){
 		cout<<"delete appelé! et fini"<<endl;
 		m_thread_get_data = nullptr;
 	}
+	
+	m_thread_action->stop_thread();
+	
+	if(m_thread_action->IsAlive()){
+		
+		m_thread_action->Delete();
+		cout<<"delete appelé! et fini"<<endl;
+		m_thread_action = nullptr;
+	}
+	
+	m_thread_monitor->stop_thread();
+	
+	if(m_thread_monitor->IsAlive()){
+		
+		m_thread_monitor->Delete();
+		cout<<"delete appelé! et fini"<<endl;
+		m_thread_monitor = nullptr;
+	}
+	
+	
+	m_thread_plot->stop_thread();
+	
+	if(m_thread_plot->IsAlive()){
+		
+		m_thread_plot->Delete();
+		cout<<"delete appelé! et fini"<<endl;
+		m_thread_plot = nullptr;
+	}
+	
+	
 	
 
 	

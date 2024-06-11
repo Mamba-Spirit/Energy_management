@@ -14,14 +14,15 @@ void *Thread_monitor::Entry() {
 			m_data_base.connect();
 		}
 	
-    /*while (!TestDestroy()) {
+    while ((!TestDestroy()) && (m_stop_thread==false)) {
         // Vérifie les valeurs de la base de données
 		
-        std::string secteur = "Secteur A"; // Exemples, adapter selon les besoins
+        std::string secteur = "Secteur A";
         bool etat_secteur = m_data_base.get_etat_secteur(secteur);
         bool etat_secteur_demande = m_data_base.get_etat_secteur_demande(secteur);
 
         if (etat_secteur == etat_secteur_demande) {
+			
             wxCommandEvent event(THREAD_MONITOR_UPDATE);
             event.SetInt(1); // Indique que les valeurs sont égales
             wxPostEvent(m_parent, event);
@@ -34,11 +35,17 @@ void *Thread_monitor::Entry() {
 
         // Pause avant la prochaine vérification
         std::this_thread::sleep_for(std::chrono::seconds(2));
-    }*/
+    }
+	OnExit();
     return NULL;
 }
 
 void Thread_monitor::OnExit(){
 	std::cout<<"Thread Monitor: OnExit appelé"<<std::endl;
-	this->Delete();
+	
+}
+
+void Thread_monitor::stop_thread(){
+
+	m_stop_thread = true;
 }

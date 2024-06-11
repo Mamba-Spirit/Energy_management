@@ -35,7 +35,6 @@ void *Thread_get_data::Entry() {
 
 void Thread_get_data::OnExit(){
 	std::cout<<"Thread get_data: OnExit appelé"<<std::endl;
-	//this->Delete();
 }
 
 void Thread_get_data::stop_thread(){

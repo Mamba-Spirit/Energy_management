@@ -10,6 +10,7 @@ class Thread_monitor : public wxThread {
 public:
     Thread_monitor(wxEvtHandler* parent);
     ~Thread_monitor();
+	void stop_thread();
 
 protected:
     virtual void *Entry();
@@ -18,6 +19,8 @@ protected:
 private:
     wxEvtHandler* m_parent;
 	DATA_BASE& m_data_base;
+	bool m_stop_thread = false;
+
 };
 
 #endif // THREAD_MONITOR_H

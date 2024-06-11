@@ -64,7 +64,7 @@ public:
 
 private:
 	
-	DATA_BASE(); // Constructeur privé pour le singleton
+	DATA_BASE(); // Constructeur pour le singleton
     ~DATA_BASE();
     DATA_BASE(const DATA_BASE&) = delete;
     DATA_BASE& operator=(const DATA_BASE&) = delete;
