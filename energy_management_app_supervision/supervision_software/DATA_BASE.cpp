@@ -489,6 +489,7 @@ void DATA_BASE::recuperer_mesures_actuelles(){
 		if(mesures_actuelles.empty()){
 			set_last_error("Pas de mesures mesuré dans les 2 dernières minutes");
             save_to_log(get_last_error());
+			//Set_mesures_fake_actuelle();
 		}
 		else{
 			sortMesuresByNomModule(mesures_actuelles);
@@ -670,16 +671,40 @@ void DATA_BASE::save_to_log(const string& log_message){
      try
     {   
         Statement *select;
-        RecordSet *resultat;
+//        RecordSet *resultat;
         select = new Statement(*m_session);
         *select << "INSERT INTO Logs (type_erreur, date) VALUES ('" << log_message << "', NOW())";
        
         select->execute();
-        //delete select;
-        delete resultat;
+        delete select;
+        //delete resultat;
 
     }
     catch (const Poco::Data::DataException& e) {
         cerr << "Erreur SQL: " << e.displayText() << endl;
     }
 }
+
+bool DATA_BASE::is_it_empty(vector<MESURE> my_vector){
+		
+	return my_vector.empty();
+}
+
+
+void DATA_BASE::Set_mesures_fake_actuelle(){
+	
+		mesures_actuelles.push_back(fake_mesure);
+		
+}
+
+void DATA_BASE::set_fake_mesure(){
+	
+		fake_mesure.set_intensite(0.00);
+		fake_mesure.set_tension(0.00);
+		fake_mesure.set_puissance(0.00);
+		fake_mesure.set_date_mesure("maintenant");
+		fake_mesure.set_nom_module("Module SA001");
+}
+
+
+

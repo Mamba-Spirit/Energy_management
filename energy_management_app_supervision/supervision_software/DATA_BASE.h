@@ -33,6 +33,7 @@ public:
 	void recuperer_mesures_actuelles();
 
 	vector<MESURE>Get_mesures_actuelles();
+	void Set_mesures_fake_actuelle();
     vector<MESURE>recuperer_mesures_historiques(const string& nom_module);          //***********DONE********************
     bool get_etat_secteur(const string& nom_secteur);                               //***********DONE********************
     bool get_etat_secteur_demande(const std::string& nom_secteur);                  //***********DONE********************
@@ -61,6 +62,9 @@ public:
     string get_last_error();
 
     void save_to_log(const string& log_message);
+	
+	void set_fake_mesure();
+	bool is_it_empty(vector<MESURE> my_vector);
 
 private:
 	
@@ -78,6 +82,8 @@ private:
     string m_last_error;
 	vector<MESURE> mesures_actuelles;
     vector<MESURE> mesures_historiques;
+	MESURE fake_mesure;
+	
 
 };
 

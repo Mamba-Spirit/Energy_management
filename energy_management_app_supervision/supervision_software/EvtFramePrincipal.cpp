@@ -412,6 +412,7 @@ void EvtFramePrincipal::OnGetDataCompleted(wxCommandEvent& event) {
     
 	
 	vector<MESURE>* mesures_actuelles = static_cast<std::vector<MESURE>*>(event.GetClientData());
+	//wxMessageBox("Échec de la mise à jour.");
 		
     
     if (mesures_actuelles)
@@ -423,10 +424,15 @@ void EvtFramePrincipal::OnGetDataCompleted(wxCommandEvent& event) {
 			if(mesures_actuelles->at(i).get_nom_module()== "Module SA001"){
 				m_textCtrl_SA001_intensy->Clear();
 				m_textCtrl_SA001_intensy->SetValue(wxString::Format(wxT("%.2f A"), mesures_actuelles->at(i).get_intensite()));
+				//m_textCtrl_SA001_intensy->Clear();
+				
 				m_textCtrl_SA001_puissance->Clear();
 				m_textCtrl_SA001_puissance->SetValue(wxString::Format(wxT("%.2f W"), mesures_actuelles->at(i).get_puissance()));
+				//m_textCtrl_SA001_puissance->Clear();
 				
+				m_textCtrl_SA001_tension->Clear();
 				m_textCtrl_SA001_tension->SetValue(wxString::Format(wxT("%.2f V"), mesures_actuelles->at(i).get_tension()));
+				//m_textCtrl_SA001_tension->Clear();
 			}
 			
 			else if(mesures_actuelles->at(i).get_nom_module()== "Module SA002"){
@@ -483,6 +489,10 @@ void EvtFramePrincipal::OnGetDataCompleted(wxCommandEvent& event) {
         }
         delete mesures_actuelles; // Libération de la mémoire
     }
+	else{
+		m_statusBar->SetStatusText("Pas de données disponible dans les 2 derenières minutes", 0);
+		//m_statusBar->SetStatusText(ligne, position);
+	}
 	
 }
 
@@ -521,7 +531,7 @@ void EvtFramePrincipal::OnCloseapp( wxCloseEvent& event ){
 		m_thread_get_data = nullptr;
 	}
 	
-	m_thread_action->stop_thread();
+/*	m_thread_action->stop_thread();
 	
 	if(m_thread_action->IsAlive()){
 		
@@ -548,7 +558,7 @@ void EvtFramePrincipal::OnCloseapp( wxCloseEvent& event ){
 		cout<<"delete appelé! et fini"<<endl;
 		m_thread_plot = nullptr;
 	}
-	
+	*/
 	
 	
 

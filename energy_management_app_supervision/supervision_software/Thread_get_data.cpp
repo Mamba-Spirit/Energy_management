@@ -19,6 +19,7 @@ void *Thread_get_data::Entry() {
 		
 		m_data_base.recuperer_mesures_actuelles();
 		
+		
 		wxCommandEvent event(THREAD_GET_DATA_COMPLETE);
 		
 		event.SetClientData(new std::vector<MESURE>(m_data_base.Get_mesures_actuelles()));
