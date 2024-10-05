@@ -15,7 +15,8 @@ FramePrincipal( parent )
 	
 	InitDatabase();
 	
-	//*********************Lancement des threads ***********************//
+	//*********************Lancement des threads ***********************//*
+	
 /*	m_thread_plot = new Thread_plot(this);
 	if (m_thread_plot->Create() != wxTHREAD_NO_ERROR){
 		wxLogError("Création thread plot impossible!");

@@ -56,9 +56,7 @@ class EvtFramePrincipal : public FramePrincipal
 		void button_24h_clicked(int id, bool found, string nom_module);
 		void button_applique_clicked(int id, bool found);
 		
-		/////////////////////////////////////////
-		//FROM MY BEST FRIEND
-		
+				
 		void OnUpdateCompleted(wxCommandEvent& event);
 		void OnGetDataCompleted(wxCommandEvent& event);
 		void OnPlotCompleted(wxCommandEvent& event);
@@ -68,7 +66,6 @@ class EvtFramePrincipal : public FramePrincipal
 		void OnRetrieveData(wxCommandEvent& event);
 		void OnUpdateDatabase(wxCommandEvent& event);
 		
-		/////////////////////////////////////////
 		void OnToggleButtonClicked(wxCommandEvent& event);
 		void OnButtonClicked(wxCommandEvent& event);
 		void OnCloseapp( wxCloseEvent& event );

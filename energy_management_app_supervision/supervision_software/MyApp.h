@@ -1,10 +1,8 @@
 /***************************************************************
  * Name:      MyApp.h
  * Purpose:   Defines Application Class
- * Author:    Éric Laly (elaly@free.fr)
- * Created:   2007-09-21
- * Copyright: Éric Laly ()
- * License:
+ * Author:    Axel NGANDU BISEBA 
+ * Origine:   Eric laly
  **************************************************************/
 
 #ifndef MYAPP_H

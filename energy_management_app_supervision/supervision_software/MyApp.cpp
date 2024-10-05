@@ -1,10 +1,8 @@
 /***************************************************************
  * Name:      MyApp.cpp
  * Purpose:   Code for Application Class
- * Author:    Éric Laly (elaly@free.fr)
- * Created:   2007-09-21
- * Copyright: Éric Laly ()
- * License:
+ * Author:    Axel NGANDU BISEBA
+ * Origine:   Eric laly
  **************************************************************/
 
 #ifdef WX_PRECOMP
