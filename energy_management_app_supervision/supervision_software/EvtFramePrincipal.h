@@ -46,6 +46,7 @@ class EvtFramePrincipal : public FramePrincipal
 		/** Constructor */
 		EvtFramePrincipal( wxWindow* parent );
 	//// end generated class members
+
 		void matching_secteur_name_and_button_activer_id();
 		bool is_button_id_in_vector(const vector<int>& my_vector, int button_id);
 		void Set_text_controle_value(const wxString& module_id, const wxString& type_mesure, double value_mesure);
@@ -62,7 +63,7 @@ class EvtFramePrincipal : public FramePrincipal
 		void OnPlotCompleted(wxCommandEvent& event);
 		void OnMonitorUpdate(wxCommandEvent& event);
 
-		//void OnButtonClicked(wxCommandEvent& event);
+		//void OnButtonClicked(wxCommandEvent& event);//
 		void OnRetrieveData(wxCommandEvent& event);
 		void OnUpdateDatabase(wxCommandEvent& event);
 		
